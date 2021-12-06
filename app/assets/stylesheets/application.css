@@ -24,7 +24,7 @@
     margin: 33px;
 }
 
-.main-visual h {
+.main-visual h1 {
     margin: 17.42px 0px;
     font-size: 26px;
 }
@@ -32,5 +32,21 @@
 .main-visual p {
     margin: 33px;
     font-size: 13px;
+}
+
+.main-table th {
+    padding: 1px 1px 5px;
+    font-size: 13px;
+}
+
+.main-table td {
+    margin: 33px;
+    padding: 1px 5px 7px;
+    font-size: 13px;
+}
+
+.main-visual h2 {
+    margin: 16.185px 0px;
+    font-size: 19.5px;
 }
 

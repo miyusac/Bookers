@@ -4,6 +4,13 @@
     <div class="main-visual">
         <h1 class="main-visual-title">Editing Book</h1>
         
+        <% if @blog.errors.any? %>
+            <%= @blog.errors.count %>
+            <% @blog.errors.full_messages.each do |message| %>
+                <%= message %>
+            <% end %>
+        <% end %>
+        
         <%= form_with model:@blog, local:true do |f| %>
             <h4>Title</h4>
             <%= f.text_field :title %>
@@ -13,7 +20,7 @@
             <%=f.submit 'Update Book' %>
         <% end %>
         
-        <%= link_to "Edit", edit_blog_path(@blog) %>
+        <%= link_to "Show", blog_path(@blog[:id]) %>
          | 
         <%= link_to "Back", new_blog_path %>
     </div>

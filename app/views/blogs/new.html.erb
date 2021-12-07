@@ -14,46 +14,26 @@
             </thead>
             
             <tbody>
-                <tr>
-                    <td>リーダブルコード</td>
-                    <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
-                </tr>
                 
+                <% @blogs.each do |blog|%>
                 <tr>
-                    <td>トラブル知らずのシステム設計</td>
-                    <td>システム設計の要点を図解で説明してくれます</td>
+                    <td><%= blog.title %></td>
+                    <td><%= blog.body %></td>
+                    <td>
+                        <%#= link_to "Show", blog_path(@blog) %>
+                        <%#= link_to "Edit", edit_blog_path(@blog) %>
+                        <%#= link_to "Destroy", blog_path(@blog), method: :delete, "data-confirm" => "Are you sure?" %>
+                    </td>
                 </tr>
-                
-                <tr>
-                    <td>たのしいRuby</td>
-                    <td>Rubyの入門におすすめです</td>
-                </tr>
-                
-                <tr>
-                    <td>入門Git</td>
-                    <td>gitについての基本操作から内部構造まで解説してくれます</td>
-                </tr>
-                
-                <tr>
-                    <td>アルゴリズム図鑑</td>
-                    <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-                </tr>
-                
-                <tr>
-                    <td>達人プログラマー</td>
-                    <td>プログラマ入門者は必読！</td>
-                </tr>
-                
-                <tr>
-                    <td>データベース実践入門</td>
-                    <td>効率的なSQL文を教えてくれます</td>
-                </tr>
+                <% end %>
             </tbody>
         </table>
         
         <h2 class="main-visual-title2" >New book</h2>
         
-        <%= form_with model:@blog,local:true do |f| %>
+        <%# if @blog.errors.any? %>
+        
+        <%= form_with model:@nblog, local:true do |f| %>
             <h4>Title</h4>
             <%= f.text_field :title %>
             
